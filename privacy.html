@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holo Chat Pro — Privacy Policy</title>
+  <meta name="description" content="Holo Chat Pro privacy policy — your data stays on your device.">
+  <style>
+    :root {
+      --bg: #06080c;
+      --surface: #0d1117;
+      --card: #161b22;
+      --border: #21262d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --purple: #b392f0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .bg-gradient {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 50% -10%, rgba(88, 166, 255, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 80% 80%, rgba(179, 146, 240, 0.04) 0%, transparent 50%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0; border-bottom: 1px solid var(--border);
+    }
+    .logo { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .logo-icon { width: 28px; height: 28px; background: linear-gradient(135deg, var(--accent), var(--purple)); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
+    .nav-links a:hover { color: var(--text); }
+    .lang-switch { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 8px; font-size: 13px; cursor: pointer; }
+    .lang-switch:hover { background: var(--surface); }
+
+    .page-title { padding: 48px 0 8px; }
+    .page-title h1 { font-size: 28px; font-weight: 700; color: var(--accent); }
+    .page-title p { color: var(--text-muted); font-size: 14px; margin-top: 4px; }
+
+    h2 { font-size: 20px; font-weight: 600; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); color: var(--accent); }
+    h3 { font-size: 16px; font-weight: 600; margin: 20px 0 8px; }
+    p, li { font-size: 14px; color: var(--text-muted); }
+    ul { margin: 8px 0 16px 20px; }
+    li { margin: 4px 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--text); }
+
+    footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; margin-top: 60px; }
+    footer a { color: var(--text-muted); font-size: 14px; margin: 0 12px; }
+    footer p { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
+
+    @media (max-width: 600px) {
+      .page-title h1 { font-size: 22px; }
+      .nav-links a:nth-child(n+3) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-gradient"></div>
+
+<nav class="container">
+  <div class="logo">
+    <div class="logo-icon">✦</div>
+    Holo Chat Pro
+  </div>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/support.html">Support</a>
+    <a href="#">Privacy</a>
+    <a href="https://github.com/dev-buddy2023/holo-chat-pro">GitHub</a>
+    <span class="lang-switch" onclick="toggleLang()">🌐 中文</span>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-title">
+    <h1 class="en-text">🔒 Privacy Policy</h1>
+    <h1 class="zh-text" style="display:none">🔒 隐私政策</h1>
+    <p class="en-text">Last updated: June 24, 2026</p>
+    <p class="zh-text" style="display:none">最后更新：2026 年 6 月 24 日</p>
+  </div>
+
+  <section>
+    <h3 class="en-text">1. Introduction</h3>
+    <h3 class="zh-text" style="display:none">1. 引言</h3>
+    <p class="en-text">This Privacy Policy describes how Holo Chat Pro ("we", "our", or "the app") handles your information when you use our iOS application. Holo Chat Pro is designed with <strong>privacy as a core principle</strong> — all sensitive data stays on your device. We have no servers, no databases, no cloud infrastructure, and no access to your conversations.</p>
+    <p class="zh-text" style="display:none">本隐私政策说明了 Holo Chat Pro（"我们"或"本应用"）在使用 iOS 应用时如何处理您的信息。Holo Chat Pro 以隐私为核心设计原则——所有敏感数据均存储在您的设备上。我们没有服务器、数据库、云基础设施，也无法访问您的对话内容。</p>
+    <p class="en-text">By using Holo Chat Pro, you agree to the practices described in this policy.</p>
+    <p class="zh-text" style="display:none">使用 Holo Chat Pro 即表示您同意本政策所述的做法。</p>
+  </section>
+
+  <section>
+    <h2 class="en-text">2. Information We Collect and How We Use It</h2>
+    <h2 class="zh-text" style="display:none">2. 我们收集的信息及使用方式</h2>
+
+    <h3 class="en-text">2.1 API Keys</h3>
+    <h3 class="zh-text" style="display:none">2.1 API 密钥</h3>
+    <ul>
+      <li class="en-text"><strong>What:</strong> Your API key(s) from OpenAI, OpenRouter, or any compatible provider, entered manually in Settings.</li>
+      <li class="zh-text" style="display:none"><strong>内容：</strong>您在设置页面手动输入的 OpenAI、OpenRouter 或任何兼容提供商的 API 密钥。</li>
+      <li class="en-text"><strong>Storage:</strong> Stored securely in the <strong>iOS Keychain</strong> (hardware-backed AES-256 encryption). It never leaves your device except when making authorized requests to your chosen API provider.</li>
+      <li class="zh-text" style="display:none"><strong>存储方式：</strong>安全存储在 iOS Keychain 中（硬件级 AES-256 加密）。仅在向您选择的 API 提供商发起授权请求时才会离开���的设备。</li>
+      <li class="en-text"><strong>Usage:</strong> Used exclusively to authenticate API calls to your provider for model access and conversation processing.</li>
+      <li class="zh-text" style="display:none"><strong>用途：</strong>仅用于验证对 API 提供商的身份认证，以访问模型和处理对话。</li>
+      <li class="en-text"><strong>Control:</strong> You can add, switch, or delete API keys at any time through the app settings. Keys support multiple profiles for different providers.</li>
+      <li class="zh-text" style="display:none"><strong>控制权：</strong>您可以随时在应用设置中添加、切换或删除 API 密钥，支持多个提供商配置文件。</li>
+    </ul>
+
+    <h3 class="en-text">2.2 Conversations & Messages</h3>
+    <h3 class="zh-text" style="display:none">2.2 对话与消息</h3>
+    <ul>
+      <li class="en-text"><strong>What:</strong> Your chat messages, including text, images, voice memos, and video files.</li>
+      <li class="zh-text" style="display:none"><strong>内容：</strong>您的聊天消息，包括文本、图片、语音备忘录和视频文件。</li>
+      <li class="en-text"><strong>Storage:</strong> Each conversation is saved as an <strong>individual file</strong> on your device. You can browse, copy, back up, edit, or transfer them through the iOS Files app.</li>
+      <li class="zh-text" style="display:none"><strong>存储方式：</strong>每条对话以独立文件保存在您的设备上。您可以通过 iOS 文件应用浏览、复制、备份、编辑或传输。</li>
+      <li class="en-text"><strong>Processing:</strong> Messages are sent to your chosen API provider for AI response generation. We do not have access to this data.</li>
+      <li class="zh-text" style="display:none"><strong>处理方式：</strong>消息发送给您选择的 API 提供商以生成 AI 回复。我们无法访问这些数据。</li>
+      <li class="en-text"><strong>Recycle Bin:</strong> Deleted conversations are moved to the Recycle Bin and retained for 30 days before permanent deletion. You can recover or permanently delete them at any time.</li>
+      <li class="zh-text" style="display:none"><strong>回收站：</strong>已删除的对话进入回收站，保留 30 天后永久删除。您可以随时恢复或永久删除。</li>
+    </ul>
+
+    <h3 class="en-text">2.3 Voice Input</h3>
+    <h3 class="zh-text" style="display:none">2.3 语音输入</h3>
+    <ul>
+      <li class="en-text"><strong>What:</strong> When you record a voice memo, your spoken words are captured as audio.</li>
+      <li class="zh-text" style="display:none"><strong>内容：</strong>录制语音备忘录时，您的话语以音频形式被捕获。</li>
+      <li class="en-text"><strong>Processing:</strong> Audio is transcribed to text <strong>entirely on your device</strong> using iOS Speech Recognition framework. The raw audio file is saved locally and only sent to your API provider if you choose to include it in a message.</li>
+      <li class="zh-text" style="display:none"><strong>处理方式：</strong>音频完全在设备本地通过 iOS 语音识别框架转写。原始音频文件保存在本地，仅当您选择将其作为消息发送时才传给 API 提供商。</li>
+      <li class="en-text"><strong>Retention:</strong> Voice memos you attach to messages are kept as part of the conversation file on your device until you delete them.</li>
+      <li class="zh-text" style="display:none"><strong>保留期限：</strong>附加到消息中的语音备忘录作为对话文件的一部分保存在您的设备上，直到您删除。</li>
+    </ul>
+
+    <h3 class="en-text">2.4 Model Data (WebUI Browser)</h3>
+    <h3 class="zh-text" style="display:none">2.4 模型数据（WebUI 浏览器）</h3>
+    <ul>
+      <li class="en-text"><strong>What:</strong> Information about available LLM models (names, capabilities, pricing, context windows, tool support, etc.) from OpenRouter and other providers.</li>
+      <li class="zh-text" style="display:none"><strong>内容：</strong>来自 OpenRouter 和其他提供商的可用 LLM 模型信息（名称、能力、价格、上下文窗口、工具支持等）。</li>
+      <li class="en-text"><strong>Source:</strong> Loaded from the provider's API when you browse models. No personal information is included in these requests beyond your API key.</li>
+      <li class="zh-text" style="display:none"><strong>来源：</strong>浏览模型时从提供商的 API 加载。这些请求中除 API 密钥外不包含任何个人信息。</li>
+    </ul>
+
+    <h3 class="en-text">2.5 Project Files</h3>
+    <h3 class="zh-text" style="display:none">2.5 项目文件</h3>
+    <ul>
+      <li class="en-text"><strong>What:</strong> When you link a conversation to a local project folder, the AI can read, write, and manage files in that folder.</li>
+      <li class="zh-text" style="display:none"><strong>内容：</strong>当您将对话关联到本地项目文件夹时，AI 可以读取、写入和管理该文件夹中的文件。</li>
+      <li class="en-text"><strong>Access:</strong> Only happens with your explicit permission on a per-conversation basis. Files are sent to your API provider only when the AI tool requires it.</li>
+      <li class="zh-text" style="display:none"><strong>访问：</strong>仅在您逐条对话明确允许的情况下进行。文件仅在 AI 工具需要时才会发送给 API 提供商。</li>
+    </ul>
+
+    <h3 class="en-text">2.6 User Preferences</h3>
+    <h3 class="zh-text" style="display:none">2.6 用户偏好</h3>
+    <ul>
+      <li class="en-text"><strong>What:</strong> App theme (light/dark/system), accent color, language selection, app icon choice, color tags for conversations, and widget preferences.</li>
+      <li class="zh-text" style="display:none"><strong>内容：</strong>应用主题（浅色/深色/系统）、主题色、语言选择、应用图标、对话彩色标签和小组件偏好。</li>
+      <li class="en-text"><strong>Storage:</strong> Stored locally in <strong>UserDefaults</strong> on your device. Not synced to any cloud service.</li>
+      <li class="zh-text" style="display:none"><strong>存储方式：</strong>本地存储在���备的 UserDefaults 中，不同步到任何云服务。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="en-text">3. Third-Party Services</h2>
+    <h2 class="zh-text" style="display:none">3. 第三方服务</h2>
+    <p class="en-text">Holo Chat Pro communicates with one or more external services that you explicitly configure:</p>
+    <p class="zh-text" style="display:none">Holo Chat Pro 与您明确配置的一个或多个外部服务通信：</p>
+    <ul>
+      <li class="en-text"><strong>Your chosen API provider</strong> (e.g., OpenAI, OpenRouter) — receives your messages, API key, and any attached files for AI response generation.</li>
+      <li class="zh-text" style="display:none"><strong>您选择的 API 提供商</strong>（如 OpenAI、OpenRouter）——接收您的消息、API 密钥和附加文件以生成 AI 回复。</li>
+    </ul>
+    <p class="en-text">Each provider's own privacy policy applies to data processed on their servers. We encourage you to review them:</p>
+    <p class="zh-text" style="display:none">各提供商自身的隐私政策适用于其在服务器上处理的数据。建议您查看：</p>
+    <ul>
+      <li><a href="https://openrouter.ai/privacy" target="_blank">OpenRouter Privacy Policy</a></li>
+      <li><a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI Privacy Policy</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="en-text">4. No Tracking, No Analytics, No Ads</h2>
+    <h2 class="zh-text" style="display:none">4. 无追踪、无分析、无广告</h2>
+    <ul>
+      <li class="en-text"><strong>No analytics SDKs</strong> — we do not use Google Analytics, Firebase, Amplitude, or any similar service.</li>
+      <li class="zh-text" style="display:none"><strong>无分析 SDK</strong>——我们不使用 Google Analytics、Firebase、Amplitude 或任何类似服务。</li>
+      <li class="en-text"><strong>No crash reporting</strong> — we do not use Crashlytics, Sentry, or any crash reporting tool.</li>
+      <li class="zh-text" style="display:none"><strong>无崩溃报告</strong>——我们不使用 Crashlytics、Sentry 或任何崩溃报告工具。</li>
+      <li class="en-text"><strong>No advertising</strong> — there are no ads in the app and no ad-related SDKs.</li>
+      <li class="zh-text" style="display:none"><strong>无广告</strong>——应用内无广告，也不含广告相关 SDK。</li>
+      <li class="en-text"><strong>No third-party trackers</strong> — we do not embed any tracking pixels, fingerprinting scripts, or behavioral profiling tools.</li>
+      <li class="zh-text" style="display:none"><strong>无第三方追踪器</strong>——我们不嵌入任何追踪像素、指纹脚本或行为分析工具。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="en-text">5. Data Security</h2>
+    <h2 class="zh-text" style="display:none">5. 数据安全</h2>
+    <ul>
+      <li class="en-text"><strong>API Keys:</strong> Stored in iOS Keychain with hardware-backed AES-256 encryption.</li>
+      <li class="zh-text" style="display:none"><strong>API 密钥：</strong>存储在 iOS Keychain，硬件级 AES-256 加密。</li>
+      <li class="en-text"><strong>Local files:</strong> Conversation files are stored in the app's sandboxed Documents directory. No other app can access them without your permission.</li>
+      <li class="zh-text" style="display:none"><strong>本地文件：</strong>对话文件存储在应用沙盒的 Documents 目录中，其他应用未经许可无法访问。</li>
+      <li class="en-text"><strong>Network:</strong> All communication with API providers is over HTTPS/TLS 1.3.</li>
+      <li class="zh-text" style="display:none"><strong>网络：</strong>与 API 提供商的所有通信均通过 HTTPS/TLS 1.3。</li>
+      <li class="en-text"><strong>No backend:</strong> Holo Chat Pro has no server infrastructure — there is no database, no cloud storage, and no backend service operated by us.</li>
+      <li class="zh-text" style="display:none"><strong>无后端：</strong>Holo Chat Pro 没有服务器基础设施——我们运营的没有数据库、没有云存储、没有后端服务。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="en-text">6. Children's Privacy</h2>
+    <h2 class="zh-text" style="display:none">6. 儿童隐私</h2>
+    <p class="en-text">Holo Chat Pro is <strong>not directed at children under the age of 13</strong> (or the applicable age of consent in your jurisdiction). We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, contact us immediately and we will take steps to delete such information.</p>
+    <p class="zh-text" style="display:none">Holo Chat Pro 不面向 13 岁以下儿童（或您所在司法管辖区的适用同意年龄）。我们不会故意收集儿童的个人信息。如果您认为有儿童向我们提供了个人数据，请立即联系我们，我们将采取措施删除此类信息。</p>
+  </section>
+
+  <section>
+    <h2 class="en-text">7. Changes to This Privacy Policy</h2>
+    <h2 class="zh-text" style="display:none">7. 隐私政策的变更</h2>
+    <p class="en-text">We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last updated" date. Material changes will also be communicated through the app.</p>
+    <p class="zh-text" style="display:none">我们可能会不时更新本隐私政策。变更将通过此页面发布，并更新"最后更新"日期。重大变更也会通过应用内通知告知。</p>
+  </section>
+
+  <section>
+    <h2 class="en-text">8. Your Rights (GDPR / CCPA / Other Jurisdictions)</h2>
+    <h2 class="zh-text" style="display:none">8. 您的权利（GDPR / CCPA / 其他司法管辖区）</h2>
+    <p class="en-text">Since Holo Chat Pro does not collect or store personal data on any server:</p>
+    <p class="zh-text" style="display:none">由于 Holo Chat Pro 不在任何服务器上收集或存储个人数据：</p>
+    <ul>
+      <li class="en-text"><strong>Right to Access / Deletion:</strong> There is no server-side data to access or delete. You can manage all local data (API Keys, conversations, preferences) directly within the app or through the iOS Files app.</li>
+      <li class="zh-text" style="display:none"><strong>访问/删除权：</strong>没有服务器端数据需要访问或删除。您可以在应用内或通过 iOS 文件应用直接管理所有本地数据（API 密钥、对话、偏好设置）。</li>
+      <li class="en-text"><strong>Right to Object:</strong> You can stop using the app at any time. No ongoing data processing occurs after you close the app.</li>
+      <li class="zh-text" style="display:none"><strong>反对权：</strong>您可以随时停止使用本应用。关闭应用后不会继续处理任何数据。</li>
+      <li class="en-text"><strong>Data Portability:</strong> All your data (conversations, settings) is already under your control on your device. Conversations are individual files you can copy freely.</li>
+      <li class="zh-text" style="display:none"><strong>数据可移植性：</strong>您的所有数据（对话、设置）已在您的��备上由您自行控制。对话是您可以自由复制的独立文件。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="en-text">9. Contact</h2>
+    <h2 class="zh-text" style="display:none">9. 联系方式</h2>
+    <p class="en-text">If you have any questions about this Privacy Policy, please contact:</p>
+    <p class="zh-text" style="display:none">如对本隐私政策有任何疑问，请联系：</p>
+    <p><a href="mailto:dev_buddy2023@163.com">dev_buddy2023@163.com</a></p>
+  </section>
+
+</div>
+
+<footer class="container">
+  <div>
+    <a href="/">Home</a>
+    <a href="/support.html">Support</a>
+    <a href="#">Privacy Policy</a>
+    <a href="mailto:dev_buddy2023@163.com">Contact</a>
+    <a href="https://github.com/dev-buddy2023/holo-chat-pro">GitHub</a>
+  </div>
+  <p>© 2026 Holo Chat Pro. All rights reserved.</p>
+</footer>
+
+<script>
+let lang = 'en';
+function toggleLang() {
+  const isZh = lang === 'en';
+  lang = isZh ? 'zh' : 'en';
+  document.querySelectorAll('.en-text').forEach(el => el.style.display = isZh ? 'none' : '');
+  document.querySelectorAll('.zh-text').forEach(el => el.style.display = isZh ? '' : 'none');
+  document.querySelector('.lang-switch').textContent = isZh ? '🌐 English' : '🌐 中文';
+}
+</script>
+
+</body>
+</html>
