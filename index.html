@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holo Chat Pro — Universal AI Chat App with 31+ Tools</title>
+  <meta name="description" content="Holo Chat Pro connects to any OpenAI-compatible API and puts 31+ real-world tools at your fingertips. Bring your own API key, use any model, unlock true AI capabilities.">
+  <style>
+    :root {
+      --bg: #06080c;
+      --surface: #0d1117;
+      --card: #161b22;
+      --border: #21262d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-glow: rgba(88, 166, 255, 0.25);
+      --purple: #b392f0;
+      --green: #3fb950;
+      --orange: #d29922;
+      --pink: #f778ba;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .bg-gradient {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% -10%, rgba(88, 166, 255, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(179, 146, 240, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 50% at 20% 70%, rgba(247, 120, 186, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Nav */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+    }
+
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero { padding: 80px 0 60px; text-align: center; }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(88, 166, 255, 0.1);
+      border: 1px solid rgba(88, 166, 255, 0.25);
+      color: var(--accent);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 30%, var(--accent) 70%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #79c0ff);
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
+
+    .btn-secondary {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-secondary:hover { background: var(--surface); border-color: var(--accent); }
+
+    /* Stats bar */
+    .stats { padding: 40px 0; }
+    .stats-grid { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat .num { font-size: 36px; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .stat .label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+    /* Features */
+    .features { padding: 80px 0; }
+
+    .section-label {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-title { text-align: center; font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+    .section-sub { text-align: center; color: var(--text-muted); margin-bottom: 48px; font-size: 16px; }
+
+    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feature-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+    .feature-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 14px;
+    }
+    .feature-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+
+    /* Tools grid */
+    .tools-section { padding: 60px 0; }
+    .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 700px; margin: 24px auto 0; }
+    .tool-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 10px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .tool-item:hover { border-color: var(--accent); color: var(--text); }
+
+    /* How it works */
+    .how-it-works { padding: 60px 0; }
+    .steps { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+    .step {
+      flex: 1; min-width: 200px; max-width: 280px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 20px;
+    }
+    .step-num {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 16px; font-weight: 700; color: #fff;
+    }
+    .step h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+    .step p { font-size: 13px; color: var(--text-muted); }
+
+    /* Privacy banner */
+    .privacy-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 40px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .privacy-banner h3 { font-size: 20px; margin-bottom: 8px; }
+    .privacy-banner p { color: var(--text-muted); font-size: 14px; }
+
+    /* CTA */
+    .cta { padding: 80px 0; text-align: center; }
+    .cta h2 { font-size: 36px; font-weight: 700; margin-bottom: 16px; }
+    .cta p { color: var(--text-muted); margin-bottom: 32px; }
+
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #000; border: 1px solid #333; border-radius: 12px;
+      padding: 12px 28px; color: #fff; text-decoration: none;
+      font-weight: 500; transition: border-color 0.2s;
+    }
+    .store-badge:hover { border-color: #666; }
+    .store-badge .small { font-size: 11px; color: #999; display: block; }
+    .store-badge .big { font-size: 18px; font-weight: 600; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+    }
+    footer a { color: var(--text-muted); text-decoration: none; font-size: 14px; margin: 0 12px; }
+    footer a:hover { color: var(--text); }
+    footer p { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 34px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+      .steps { flex-direction: column; align-items: center; }
+      .step { max-width: 100%; }
+      .nav-links a:nth-child(n+3) { display: none; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 50px 0 30px; }
+      .hero h1 { font-size: 28px; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-gradient"></div>
+
+<nav class="container">
+  <div class="logo">
+    <div class="logo-icon">✦</div>
+    Holo Chat Pro
+  </div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#tools">Tools</a>
+    <a href="#how">How It Works</a>
+    <a href="#privacy">Privacy</a>
+    <a href="https://github.com/dev-buddy2023/holo-chat-pro">GitHub</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero container">
+  <div class="hero-badge">✦ Universal AI Chat · 31+ Built-in Tools · BYO API Key</div>
+  <h1>Your AI Can Talk.<br>With Holo, It Can <em>Act</em>.</h1>
+  <p>Connect to any OpenAI-compatible API — OpenAI, OpenRouter, local LLMs. Bring your own key. Instantly switch between models. Unlock 31+ real-world tools in one conversation.</p>
+  <div class="hero-actions">
+    <a href="#" class="btn-primary">
+      <span>📱</span>
+      Download on App Store
+    </a>
+    <a href="https://github.com/dev-buddy2023/holo-chat-pro" class="btn-secondary">
+      <span>📖</span>
+      View on GitHub
+    </a>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats container">
+  <div class="stats-grid">
+    <div class="stat"><div class="num">200+</div><div class="label">Models Supported</div></div>
+    <div class="stat"><div class="num">31+</div><div class="label">Built-in Tools</div></div>
+    <div class="stat"><div class="num">20+</div><div class="label">Languages</div></div>
+    <div class="stat"><div class="num">10</div><div class="label">Accent Colors</div></div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features container" id="features">
+  <div class="section-label">✦ Features</div>
+  <h2 class="section-title">What Makes Holo Chat Pro Different</h2>
+  <p class="section-sub">Not just another AI chat app. A tool-enabled assistant that respects your privacy.</p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(88,166,255,0.12);">🔌</div>
+      <h3>Universal API Support</h3>
+      <p>Connect to OpenAI, OpenRouter, or any OpenAI-compatible provider. Use Claude, Gemini, Grok, DeepSeek, Qwen, GLM, Groq, local LLMs — switch with one tap.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(179,146,240,0.12);">🧰</div>
+      <h3>31+ Real-World Tools</h3>
+      <p>Your AI can search the web, run code, download files, read & write project files, send emails, set calendar events, check location, navigate, play music, generate PDFs — and more.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(63,185,80,0.12);">⚡</div>
+      <h3>Prompt Caching</h3>
+      <p>Compatible models support prompt caching to slash token usage on long conversations. Cut API costs in half or more on repeated context.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(247,120,186,0.12);">🎨</div>
+      <h3>Beautiful Rendering</h3>
+      <p>Markdown, LaTeX math, Mermaid diagrams, syntax-highlighted code, SVG & HTML live previews. Tap any message for full-screen reading.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(210,153,34,0.12);">🎙️</div>
+      <h3>Multimodal Conversations</h3>
+      <p>Send images, record voice memos, attach video. Receive image and audio replies. Your AI sees and hears what you do — all in one thread.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(88,166,255,0.12);">💾</div>
+      <h3>Your Data, Your Device</h3>
+      <p>Every chat saved as an individual file. Browse, back up, edit, transfer via Files app. No lock-in, no gatekeeping. Recycle Bin keeps deleted chats for 30 days.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(179,146,240,0.12);">🖥️</div>
+      <h3>Desktop-Grade WebUI</h3>
+      <p>Powerful web interface on your local network. Browse conversations, manage profiles, backups, projects, system prompts, and explore 200+ models with smart filters.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(63,185,80,0.12);">💬</div>
+      <h3>Smart Conversation Management</h3>
+      <p>Color-coded tags, filters, batch-select, bulk-tag, auto-summarize with AI. Search titles and messages. Lock with Face ID or Touch ID.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(247,120,186,0.12);">🛠️</div>
+      <h3>Custom Skills</h3>
+      <p>Tell the AI to write and run custom scripts on the fly. Process data, generate HTML, SVGs. If 31+ tools aren't enough, the AI creates what you need.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(210,153,34,0.12);">🔒</div>
+      <h3>Privacy First</h3>
+      <p>No accounts, no cloud sync, no telemetry. Everything stays on your device. Nothing leaves unless you choose to share it. API keys stored securely in iOS Keychain.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(88,166,255,0.12);">🎵</div>
+      <h3>Music Playback Control</h3>
+      <p>Play, pause, skip, adjust volume — all through the AI chat. No need to leave the app to control your music.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon" style="background:rgba(179,146,240,0.12);">🗺️</div>
+      <h3>Location & Navigation</h3>
+      <p>GPS location, place search, map display, and navigation with 7 ride-hailing apps. Find nearby places and get directions — all through AI chat.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Tools Showcase -->
+<section class="tools-section container" id="tools">
+  <div class="section-label">✦ Built-in Tools</div>
+  <h2 class="section-title" style="font-size:28px;">31+ Tools at Your AI's Command</h2>
+  <p class="section-sub">Your AI doesn't just talk — it does.</p>
+  <div class="tools-grid">
+    <div class="tool-item">🌐 Web Search</div>
+    <div class="tool-item">💻 Run Code</div>
+    <div class="tool-item">📁 File Manager</div>
+    <div class="tool-item">📄 Read Files</div>
+    <div class="tool-item">✏️ Edit Files</div>
+    <div class="tool-item">📥 Download</div>
+    <div class="tool-item">📤 Upload</div>
+    <div class="tool-item">📧 Send Email</div>
+    <div class="tool-item">📅 Calendar</div>
+    <div class="tool-item">📍 GPS Location</div>
+    <div class="tool-item">🗺️ Navigation</div>
+    <div class="tool-item">🏪 Nearby Places</div>
+    <div class="tool-item">🎵 Music Control</div>
+    <div class="tool-item">📄 Generate PDF</div>
+    <div class="tool-item">🖼️ Image Gen</div>
+    <div class="tool-item">🔊 Text to Speech</div>
+    <div class="tool-item">🎤 Voice Memo</div>
+    <div class="tool-item">📋 Clipboard</div>
+    <div class="tool-item">🔗 Share Sheet</div>
+    <div class="tool-item">🧹 Recycle Bin</div>
+  </div>
+</section>
+
+<!-- How it Works -->
+<section class="how-it-works container" id="how">
+  <div class="section-label">✦ How It Works</div>
+  <h2 class="section-title" style="font-size:28px;">Get Started in Minutes</h2>
+  <p class="section-sub">No account. No subscription. Just your API key.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Get an API Key</h3>
+      <p>Sign up with OpenAI, OpenRouter, or any compatible provider. Get your API key — that's all you need.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Add Your Key</h3>
+      <p>Paste your key into Holo Chat Pro. Stored securely in iOS Keychain — never shared, never uploaded.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Start Chatting</h3>
+      <p>Talk to your AI. Use 31+ tools. Switch between 200+ models. Customize everything. No limits.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy -->
+<section class="privacy-banner container" id="privacy">
+  <h3>🔒 Privacy-First by Design</h3>
+  <p>No accounts, no cloud sync, no tracking. All data stays on your device. You bring your own API key and connect directly to your chosen provider. Holo Chat Pro never sees your conversations unless you choose to share them.</p>
+</section>
+
+<!-- CTA -->
+<section class="cta container">
+  <h2>Ready to Unlock Your AI's Full Potential?</h2>
+  <p>Download Holo Chat Pro and experience AI that can actually do things.</p>
+  <a href="#" class="store-badge">
+    <span style="font-size:28px;">🍎</span>
+    <span>
+      <span class="small">Download on the</span>
+      <span class="big">App Store</span>
+    </span>
+  </a>
+  <p style="margin-top:20px; font-size:13px; color:var(--text-muted);">Free to download · No subscriptions · Pay only for the models you use</p>
+</section>
+
+<!-- Footer -->
+<footer class="container">
+  <div>
+    <a href="https://github.com/dev-buddy2023/holo-chat-pro">GitHub</a>
+    <a href="https://github.com/dev-buddy2023/holo-chat-pro/blob/main/README.md">Support</a>
+    <a href="#">Privacy Policy</a>
+  </div>
+  <p>© 2026 Holo Chat Pro. All rights reserved.</p>
+</footer>
+
+<script>
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const id = a.getAttribute('href').slice(1);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
