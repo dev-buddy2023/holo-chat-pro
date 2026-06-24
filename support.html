@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holo Chat Pro — Support</title>
+  <meta name="description" content="Holo Chat Pro support — get help with API keys, tools, features, and troubleshooting.">
+  <style>
+    :root {
+      --bg: #06080c;
+      --surface: #0d1117;
+      --card: #161b22;
+      --border: #21262d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --purple: #b392f0;
+      --green: #3fb950;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .bg-gradient {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 50% -10%, rgba(88, 166, 255, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 80% 80%, rgba(179, 146, 240, 0.04) 0%, transparent 50%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0; border-bottom: 1px solid var(--border);
+    }
+    .logo { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .logo-icon { width: 28px; height: 28px; background: linear-gradient(135deg, var(--accent), var(--purple)); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
+    .nav-links a:hover { color: var(--text); }
+
+    .page-title { padding: 48px 0 8px; }
+    .page-title h1 { font-size: 28px; font-weight: 700; color: var(--accent); }
+    .page-title p { color: var(--text-muted); font-size: 15px; margin-top: 6px; }
+
+    h2 { font-size: 22px; font-weight: 600; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); color: var(--accent); }
+    h3 { font-size: 17px; font-weight: 600; margin: 24px 0 10px; }
+    p, li { font-size: 15px; color: var(--text-muted); }
+    ul { margin: 8px 0 16px 20px; }
+    li { margin: 4px 0; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    code {
+      background: var(--card);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 13px;
+      border: 1px solid var(--border);
+    }
+
+    .faq-item { margin: 12px 0; padding: 16px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+    .faq-item strong { color: var(--text); display: block; margin-bottom: 4px; }
+
+    .troubleshoot-item { margin: 12px 0; padding: 16px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; }
+    .troubleshoot-item h4 { color: var(--orange, #d29922); margin-bottom: 6px; }
+
+    footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; margin-top: 60px; }
+    footer a { color: var(--text-muted); font-size: 14px; margin: 0 12px; }
+    footer p { color: var(--text-muted); font-size: 13px; margin-top: 12px; }
+
+    .lang-switch {
+      background: var(--card); border: 1px solid var(--border); color: var(--text);
+      padding: 6px 14px; border-radius: 8px; font-size: 13px; cursor: pointer;
+    }
+    .lang-switch:hover { background: var(--surface); }
+
+    @media (max-width: 600px) {
+      .page-title h1 { font-size: 22px; }
+      .nav-links a:nth-child(n+3) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-gradient"></div>
+
+<nav class="container">
+  <div class="logo">
+    <div class="logo-icon">✦</div>
+    Holo Chat Pro
+  </div>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="#getting-started">Getting Started</a>
+    <a href="#faq">FAQ</a>
+    <a href="#troubleshooting">Troubleshooting</a>
+    <span class="lang-switch" onclick="toggleLang()">🌐 中文</span>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-title">
+    <h1 class="en-text">📖 Support</h1>
+    <h1 class="zh-text" style="display:none">📖 技术支持</h1>
+    <p class="en-text">Everything you need to get the most out of Holo Chat Pro.</p>
+    <p class="zh-text" style="display:none">帮助您充分利用 Holo Chat Pro 的一切功能。</p>
+  </div>
+
+  <!-- Getting Started -->
+  <section id="getting-started">
+    <h2 class="en-text">🚀 Getting Started</h2>
+    <h2 class="zh-text" style="display:none">🚀 快速上手</h2>
+
+    <p class="en-text">Holo Chat Pro lets you chat with any AI model through OpenAI-compatible APIs, with 31+ built-in tools at your command.</p>
+    <p class="zh-text" style="display:none">Holo Chat Pro 让您通过 OpenAI 兼容的 API 与任何 AI 模型聊天，并拥有 31+ 个内置工具。</p>
+
+    <h3 class="en-text">Step 1: Get an API Key</h3>
+    <h3 class="zh-text" style="display:none">步骤 1：获取 API Key</h3>
+    <p class="en-text">You'll need an API key from an OpenAI-compatible provider. Popular options:</p>
+    <p class="zh-text" style="display:none">您需要从 OpenAI 兼容的提供商获取 API 密钥。常见选择：</p>
+    <ul>
+      <li><a href="https://openrouter.ai/keys" target="_blank">OpenRouter</a> — access Claude, Gemini, DeepSeek, and 200+ models</li>
+      <li><a href="https://platform.openai.com/api-keys" target="_blank">OpenAI</a> — GPT-4o, GPT-4o Mini</li>
+      <li>Any OpenAI-compatible provider or local LLM endpoint</li>
+    </ul>
+
+    <h3 class="en-text">Step 2: Add Your Key</h3>
+    <h3 class="zh-text" style="display:none">步骤 2：添加密钥</h3>
+    <p class="en-text">Go to Settings → API Key and paste your key. It's stored securely in iOS Keychain — never shared or uploaded anywhere.</p>
+    <p class="zh-text" style="display:none">前往设置 → API Key 粘贴您的密钥。密钥安全存储在 iOS Keychain 中，绝不外传。</p>
+
+    <h3 class="en-text">Step 3: Start Chatting</h3>
+    <h3 class="zh-text" style="display:none">步骤 3：开始聊天</h3>
+    <p class="en-text">That's it! Choose a model, type or speak your message, and your AI can use 31+ tools to help you get things done.</p>
+    <p class="zh-text" style="display:none">完成！选择模型，输入或说出您的需求，AI 可调用 31+ 个工具帮您完成任务。</p>
+  </section>
+
+  <!-- What's New / Features -->
+  <section>
+    <h2 class="en-text">✨ Key Features</h2>
+    <h2 class="zh-text" style="display:none">✨ 主要功能</h2>
+    <ul>
+      <li class="en-text"><strong>Universal API:</strong> Connect to OpenAI, OpenRouter, or any compatible provider</li>
+      <li class="zh-text" style="display:none"><strong>通用 API：</strong>连接 OpenAI、OpenRouter 或任何兼容的提供商</li>
+      <li class="en-text"><strong>31+ Tools:</strong> Web search, code execution, file management, email, calendar, navigation, and more</li>
+      <li class="zh-text" style="display:none"><strong>31+ 工具：</strong>网页搜索、代码执行、文件管理、邮件、日历、导航等</li>
+      <li class="en-text"><strong>Prompt Caching:</strong> Save up to 50%+ on API costs with compatible models</li>
+      <li class="zh-text" style="display:none"><strong>Prompt 缓存：</strong>兼容模型可节省高达 50%+ 的 API 费用</li>
+      <li class="en-text"><strong>Multimodal:</strong> Send images, voice, video — receive image & audio replies</li>
+      <li class="zh-text" style="display:none"><strong>多模态：</strong>发送图片、语音、视频——接收图像和音频回复</li>
+      <li class="en-text"><strong>WebUI:</strong> Desktop-grade management console on your local network</li>
+      <li class="zh-text" style="display:none"><strong>网页界面：</strong>局域网内桌面级管理控制台</li>
+      <li class="en-text"><strong>Privacy First:</strong> No accounts, no cloud sync, no telemetry</li>
+      <li class="zh-text" style="display:none"><strong>隐私优先：</strong>无需账号、无云同步、无遥测</li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2 class="en-text">❓ FAQ</h2>
+    <h2 class="zh-text" style="display:none">❓ 常见问题</h2>
+
+    <div class="faq-item">
+      <strong class="en-text">Do I need my own API key?</strong>
+      <strong class="zh-text" style="display:none">需要自己的 API Key 吗？</strong>
+      <p class="en-text"><strong>Yes.</strong> Holo Chat Pro does not provide API services. You bring your own key and connect directly to your chosen provider. You are responsible for its availability and usage.</p>
+      <p class="zh-text" style="display:none"><strong>需要。</strong>Holo Chat Pro 不提供 API 服务。您自带密钥并直接连接您选择的提供商，自行负责其可用性和使用。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong class="en-text">Is there a subscription?</strong>
+      <strong class="zh-text" style="display:none">需要订阅吗？</strong>
+      <p class="en-text"><strong>No.</strong> The app is free to download. You only pay your provider directly for the tokens you use. No markups, no hidden fees.</p>
+      <p class="zh-text" style="display:none"><strong>不需要。</strong>应用免费下载，您只需直接向提供商支付使用的 token 费用。无加价、无隐藏费用。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong class="en-text">How do I switch between models?</strong>
+      <strong class="zh-text" style="display:none">如何切换模型？</strong>
+      <p class="en-text">Save multiple API profiles and switch with one tap. Keep different keys and model preferences organized.</p>
+      <p class="zh-text" style="display:none">保存多个 API 配置文件，一键切换。管理不同的密钥和模型偏好。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong class="en-text">Where is my data stored?</strong>
+      <strong class="zh-text" style="display:none">数据存储在哪里？</strong>
+      <p class="en-text">Everything stays on your device. Chats are saved as individual files you can browse, back up, or transfer through the Files app. No data is sent to any server except your chosen API provider.</p>
+      <p class="zh-text" style="display:none">所有数据都保存在您的设备上。聊天记录以独立文件存储，您可以通过"文件"应用浏览、备份或传输。除了您选择的 API 提供商外，不会向任何服务器发送数据。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong class="en-text">What models are supported?</strong>
+      <strong class="zh-text" style="display:none">支持哪些模型？</strong>
+      <p class="en-text">Any model available through your API provider. With OpenRouter you get 200+ models: GPT-4o, Claude 3.5/3.7, Gemini 2.0, DeepSeek V3/R1, Qwen, GLM, Groq, Mistral, Llama 3, and more.</p>
+      <p class="zh-text" style="display:none">您的 API 提供商提供的任何模型。使用 OpenRouter 可获取 200+ 模型：GPT-4o、Claude 3.5/3.7、Gemini 2.0、DeepSeek V3/R1、Qwen、GLM、Groq、Mistral、Llama 3 等。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong class="en-text">What is prompt caching?</strong>
+      <strong class="zh-text" style="display:none">什么是 Prompt 缓存？</strong>
+      <p class="en-text">Some providers (like OpenRouter with Claude) support prompt caching, reusing repeated context from previous turns. This can cut your API costs by 50% or more on long conversations.</p>
+      <p class="zh-text" style="display:none">部分提供商（如 OpenRouter 的 Claude）支持 prompt 缓存，可重复使用之前对话的上下文，在长对话中可节省 50% 以上的 API 费用。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong class="en-text">Can I link a project folder?</strong>
+      <strong class="zh-text" style="display:none">可以关联项目文件夹吗？</strong>
+      <p class="en-text"><strong>Yes.</strong> Link a conversation to a local project folder. The AI can read, write, search, and manage your project files — like a coding assistant built into your chat.</p>
+      <p class="zh-text" style="display:none"><strong>可以。</strong>将对话关联到本地项目文件夹。AI 可以读取、写入、搜索和管理您的项目文件——就像内置在聊天中的编程助手。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong class="en-text">How do I recover deleted chats?</strong>
+      <strong class="zh-text" style="display:none">如何恢复已删除的聊天？</strong>
+      <p class="en-text">Deleted conversations go to the Recycle Bin and stay there for 30 days. You can recover or permanently delete them at any time.</p>
+      <p class="zh-text" style="display:none">已删除的对话会进入回收站，保留 30 天。您可以随时恢复或永久删除。</p>
+    </div>
+  </section>
+
+  <!-- Troubleshooting -->
+  <section id="troubleshooting">
+    <h2 class="en-text">🔧 Troubleshooting</h2>
+    <h2 class="zh-text" style="display:none">🔧 故障排除</h2>
+
+    <div class="troubleshoot-item">
+      <h4 class="en-text">"Invalid API Key" or "401 Unauthorized"</h4>
+      <h4 class="zh-text" style="display:none">"Invalid API Key" 或 "401 Unauthorized"</h4>
+      <ul>
+        <li class="en-text">Double-check your key in Settings → API Key</li>
+        <li class="zh-text" style="display:none">检查设置 → API Key 中的密钥</li>
+        <li class="en-text">Verify the key is active and has credits on your provider's dashboard</li>
+        <li class="zh-text" style="display:none">在提供商的仪表盘中确认密钥有效且有余额</li>
+        <li class="en-text">Ensure you're using the correct provider URL in your profile settings</li>
+        <li class="zh-text" style="display:none">确保在配置文件设置中使用了正确的提供商 URL</li>
+      </ul>
+    </div>
+
+    <div class="troubleshoot-item">
+      <h4 class="en-text">No models showing up</h4>
+      <h4 class="zh-text" style="display:none">没有显示模型</h4>
+      <ul>
+        <li class="en-text">Check your internet connection</li>
+        <li class="zh-text" style="display:none">检查网络连接</li>
+        <li class="en-text">Your provider may be experiencing temporary downtime</li>
+        <li class="zh-text" style="display:none">您的提供商可能暂时不可用</li>
+        <li class="en-text">Try refreshing the model list in the WebUI or app settings</li>
+        <li class="zh-text" style="display:none">尝试在 WebUI 或应用设置中刷新模型列表</li>
+      </ul>
+    </div>
+
+    <div class="troubleshoot-item">
+      <h4 class="en-text">Tools not working</h4>
+      <h4 class="zh-text" style="display:none">工具不起作用</h4>
+      <ul>
+        <li class="en-text">Make sure you're using a model that supports tool/function calling (e.g., Claude, GPT-4o, Gemini)</li>
+        <li class="zh-text" style="display:none">确保您使用的模型支持工具/函数调用（如 Claude、GPT-4o、Gemini）</li>
+        <li class="en-text">Some models have limited tool capabilities — check the model card in the browser</li>
+        <li class="zh-text" style="display:none">部分模型工具能力有限——请在模型浏览器中查看模型卡片</li>
+      </ul>
+    </div>
+
+    <div class="troubleshoot-item">
+      <h4 class="en-text">App crashes or freezes</h4>
+      <h4 class="zh-text" style="display:none">应用崩溃或无响应</h4>
+      <ul>
+        <li class="en-text">Close the app and reopen</li>
+        <li class="zh-text" style="display:none">关闭应用重新打开</li>
+        <li class="en-text">Update to the latest version from the App Store</li>
+        <li class="zh-text" style="display:none">从 App Store 更新到最新版本</li>
+        <li class="en-text">If the issue persists, email us at <a href="mailto:dev_buddy2023@163.com">dev_buddy2023@163.com</a></li>
+        <li class="zh-text" style="display:none">如果问题仍然存在，请发送邮件至 <a href="mailto:dev_buddy2023@163.com">dev_buddy2023@163.com</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section>
+    <h2 class="en-text">📬 Contact</h2>
+    <h2 class="zh-text" style="display:none">📬 联系方式</h2>
+    <p class="en-text">Need help? Reach out to us anytime:</p>
+    <p class="zh-text" style="display:none">需要帮助？随时联系我们：</p>
+    <p><a href="mailto:dev_buddy2023@163.com">dev_buddy2023@163.com</a></p>
+    <p class="en-text" style="margin-top: 4px; color: var(--text-muted); font-size: 14px;">We aim to respond within 24 hours on business days.</p>
+    <p class="zh-text" style="display:none; margin-top: 4px; color: var(--text-muted); font-size: 14px;">工作日 24 小时内回复。</p>
+  </section>
+
+</div>
+
+<footer class="container">
+  <div>
+    <a href="/">Home</a>
+    <a href="https://github.com/dev-buddy2023/holo-chat-pro">GitHub</a>
+    <a href="#">Privacy Policy</a>
+  </div>
+  <p>© 2026 Holo Chat Pro. All rights reserved.</p>
+</footer>
+
+<script>
+let lang = 'en';
+function toggleLang() {
+  const isZh = lang === 'en';
+  lang = isZh ? 'zh' : 'en';
+  document.querySelectorAll('.en-text').forEach(el => el.style.display = isZh ? 'none' : '');
+  document.querySelectorAll('.zh-text').forEach(el => el.style.display = isZh ? '' : 'none');
+  document.querySelector('.lang-switch').textContent = isZh ? '🌐 English' : '🌐 中文';
+}
+</script>
+
+</body>
+</html>
