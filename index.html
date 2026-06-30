@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-touch-icon" content="/icon.jpg">
+  <link rel="icon" href="/icon.jpg" type="image/jpeg">
   <title>Holo Chat Pro — Universal AI Chat App with 31+ Tools</title>
   <meta name="description" content="Holo Chat Pro connects to any OpenAI-compatible API and puts 31+ real-world tools at your fingertips. Bring your own API key, use any model, unlock true AI capabilities.">
   <style>
@@ -70,12 +72,13 @@
     .logo-icon {
       width: 32px;
       height: 32px;
-      background: linear-gradient(135deg, var(--accent), var(--purple));
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 17px;
+      border-radius: 7px;
+      overflow: hidden;
+    }
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .nav-links { display: flex; gap: 24px; align-items: center; }
@@ -293,7 +296,7 @@
 
 <nav class="container">
   <div class="logo">
-    <div class="logo-icon">✦</div>
+    <div class="logo-icon"><img src="icon.jpg" alt="HoloChat Pro"></div>
     Holo Chat Pro
   </div>
   <div class="nav-links">
@@ -301,6 +304,7 @@
     <a href="#tools">Tools</a>
     <a href="#how">How It Works</a>
     <a href="#privacy">Privacy</a>
+    <a href="https://apps.apple.com/us/app/holochat-pro/id6782085754">App Store</a>
     <a href="https://github.com/dev-buddy2023/holo-chat-pro">GitHub</a>
     <a href="mailto:dev_buddy2023@163.com">Contact</a>
   </div>
@@ -312,7 +316,7 @@
   <h1>Your AI Can Talk.<br>With Holo, It Can <em>Act</em>.</h1>
   <p>Connect to any OpenAI-compatible API — OpenAI, OpenRouter, local LLMs. Bring your own key. Instantly switch between models. Unlock 31+ real-world tools in one conversation.</p>
   <div class="hero-actions">
-    <a href="#" class="btn-primary">
+    <a href="https://apps.apple.com/us/app/holochat-pro/id6782085754" class="btn-primary">
       <span>📱</span>
       Download on App Store
     </a>
@@ -477,7 +481,7 @@
 <section class="cta container">
   <h2>Ready to Unlock Your AI's Full Potential?</h2>
   <p>Download Holo Chat Pro and experience AI that can actually do things.</p>
-  <a href="#" class="store-badge">
+  <a href="https://apps.apple.com/us/app/holochat-pro/id6782085754" class="store-badge">
     <span style="font-size:28px;">🍎</span>
     <span>
       <span class="small">Download on the</span>
@@ -491,7 +495,7 @@
 <footer class="container">
   <div>
     <a href="https://github.com/dev-buddy2023/holo-chat-pro">GitHub</a>
-    <a href="https://github.com/dev-buddy2023/holo-chat-pro/blob/main/README.md">Support</a>
+    <a href="support.html">Support</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="mailto:dev_buddy2023@163.com">Contact</a>
   </div>
