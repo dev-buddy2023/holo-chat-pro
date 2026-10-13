@@ -1,0 +1,8 @@
+name: "HoloChat Pro"
+description: "A privacy-first, BYOK AI assistant for iOS with 31+ real-world tools — web search, code execution, image/music/video generation, HomeKit, maps, and on-device models. Bring your own OpenRouter key to switch between 200+ models."
+url: "https://apps.apple.com/us/app/holochat-pro/id6782085754"
+docs: "https://dev-buddy2023.github.io/holo-chat-pro/openrouter.html"
+tags:
+  - chat
+  - productivity
+date_added: "2026-10-13"

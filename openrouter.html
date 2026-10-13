@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HoloChat Pro — OpenRouter Setup</title>
+  <meta name="description" content="How to use an OpenRouter API key in HoloChat Pro: bring your own key, switch between 200+ models, and how the app attributes its requests.">
+  <link rel="canonical" href="https://dev-buddy2023.github.io/holo-chat-pro/openrouter.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dev-buddy2023.github.io/holo-chat-pro/openrouter.html">
+  <meta property="og:site_name" content="HoloChat Pro">
+  <meta property="og:title" content="HoloChat Pro — OpenRouter Setup">
+  <meta property="og:description" content="Bring your own OpenRouter key: setup steps, model browser filters, and how requests are attributed.">
+  <meta property="og:image" content="https://dev-buddy2023.github.io/holo-chat-pro/icon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HoloChat Pro — OpenRouter Setup">
+  <meta name="twitter:description" content="Bring your own OpenRouter key: setup steps, model browser filters, and how requests are attributed.">
+  <meta name="twitter:image" content="https://dev-buddy2023.github.io/holo-chat-pro/icon.jpg">
+  <style>
+    :root {
+      --bg: #06080c; --surface: #0d1117; --card: #161b22; --border: #21262d;
+      --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff; --purple: #b392f0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .logo-icon { width: 28px; height: 28px; border-radius: 6px; overflow: hidden; }
+    .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
+    .nav-links a:hover { color: var(--text); }
+    .page-title { padding: 48px 0 8px; }
+    .page-title h1 { font-size: 28px; font-weight: 700; color: var(--accent); }
+    .page-title p { color: var(--text-muted); font-size: 14px; margin-top: 4px; }
+    h2 { font-size: 20px; font-weight: 600; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); color: var(--accent); }
+    p, li { font-size: 14px; color: var(--text-muted); }
+    ul, ol { margin: 8px 0 16px 20px; }
+    li { margin: 6px 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--text); }
+    pre { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 13px; overflow-x: auto; margin: 12px 0 16px; color: var(--text); font-family: 'SF Mono', ui-monospace, Menlo, monospace; }
+    footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; margin-top: 60px; }
+    footer a { color: var(--text-muted); font-size: 14px; margin: 0 12px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <div class="logo">
+      <div class="logo-icon"><img src="icon.jpg" alt="HoloChat Pro"></div>
+      HoloChat Pro
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://apps.apple.com/us/app/holochat-pro/id6782085754">App Store</a>
+    </div>
+  </nav>
+
+  <div class="page-title">
+    <h1>OpenRouter Setup</h1>
+    <p>Bring your own key — HoloChat Pro does not provide any API service.</p>
+  </div>
+
+  <h2>Bring your own key</h2>
+  <p>HoloChat Pro is a client, not a model provider. You add your own OpenRouter API key, and the app connects you to the models you already have access to. There is no subscription in this app — you pay OpenRouter directly for the tokens you use, at their prices.</p>
+
+  <h2>Setup</h2>
+  <ol>
+    <li>Create an API key at <a href="https://openrouter.ai/keys">openrouter.ai/keys</a>.</li>
+    <li>In the app, add a new API profile and paste the key. The base URL is <strong>https://openrouter.ai/api/v1</strong>.</li>
+    <li>Pick a model and start a conversation. Profiles can be saved and switched with one tap, so you can move between OpenRouter, OpenAI, and any OpenAI-compatible provider without reconfiguring.</li>
+  </ol>
+
+  <h2>Model browser</h2>
+  <p>The built-in model browser lists OpenRouter models with filters for <strong>Tools</strong>, <strong>Reasoning</strong>, <strong>Structured Outputs</strong>, and <strong>Vision</strong>, plus warnings for models that are being deprecated. Tool calling is what makes the 31+ built-in tools work, so check the Tools filter before switching models.</p>
+
+  <h2>How requests are attributed</h2>
+  <p>Requests sent by the app include attribution headers, so usage is credited to the app's public page on OpenRouter:</p>
+  <pre>HTTP-Referer: https://dev-buddy2023.github.io/holo-chat-pro/
+X-OpenRouter-Title: HoloChat Pro
+X-OpenRouter-Categories: general-chat,personal-agent</pre>
+  <p>The app page is live at <a href="https://openrouter.ai/apps/url/https%3A%2F%2Fdev-buddy2023.github.io%2Fholo-chat-pro">openrouter.ai/apps/url/…</a>. Categories are merged over time, and only values from OpenRouter's recognised list are accepted — <code>general-chat</code> and <code>personal-agent</code> are the ones this app uses.</p>
+
+  <h2>Notes</h2>
+  <ul>
+    <li>The app stores conversations as files on your device. No accounts, no cloud sync, no telemetry.</li>
+    <li>Nothing is sent to OpenRouter unless you send a message in a conversation using an OpenRouter profile.</li>
+    <li>On-device models run locally and send no network requests at all.</li>
+  </ul>
+
+  <footer>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:dev_buddy2023@163.com">Contact</a>
+    </div>
+    <p style="margin-top:12px; font-size:13px; color:var(--text-muted);">© 2026 HoloChat Pro. All rights reserved.</p>
+  </footer>
+</div>
+</body>
+</html>
