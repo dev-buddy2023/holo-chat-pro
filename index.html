@@ -107,26 +107,34 @@
 
     /* Nav */
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(6, 8, 12, 0.72);
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
     }
-
     .logo {
-      font-size: 22px;
-      font-weight: 700;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
     }
-
     .logo-icon {
-      width: 32px;
-      height: 32px;
+      width: 26px;
+      height: 26px;
       border-radius: 7px;
       overflow: hidden;
+      box-shadow: 0 0 0 1px var(--border);
     }
     .logo-icon img {
       width: 100%;
@@ -134,9 +142,17 @@
       object-fit: cover;
     }
 
-    .nav-links { display: flex; gap: 24px; align-items: center; }
-    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .nav-links { display: flex; gap: 22px; align-items: center; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 13.5px; transition: color 0.2s, border-color 0.2s; }
     .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      color: var(--text);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 7px 14px;
+    }
+    .nav-cta:hover { border-color: var(--accent); color: var(--accent); }
 
     /* Hero */
     .hero { padding: 80px 0 60px; text-align: center; }
@@ -345,8 +361,8 @@
       .tools-grid { grid-template-columns: repeat(3, 1fr); }
       .steps { flex-direction: column; align-items: center; }
       .step { max-width: 100%; }
-      .nav-links { flex-wrap: wrap; gap: 14px; }
-      .nav-links a.m-hide { display: none; }
+      .nav-inner { flex-wrap: wrap; gap: 12px; }
+      .nav-links { gap: 16px; }
     }
     @media (max-width: 480px) {
       .hero { padding: 50px 0 30px; }
@@ -362,21 +378,18 @@
 
 <div class="bg-gradient"></div>
 
-<nav class="container">
-  <div class="logo">
-    <div class="logo-icon"><img src="icon.jpg" alt="HoloChat Pro"></div>
-    HoloChat Pro
-  </div>
-  <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#tools">Tools</a>
-    <a href="#screenshots">Screenshots</a>
-    <a href="#how" class="m-hide">How It Works</a>
-    <a href="#privacy" class="m-hide">Privacy</a>
-    <a href="https://apps.apple.com/us/app/holochat-pro/id6782085754">App Store</a>
-    <a href="support.html" class="m-hide">Support</a>
-    <a href="openrouter.html" class="m-hide">OpenRouter</a>
-    <a href="mailto:dev_buddy2023@163.com" class="m-hide">Contact</a>
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">
+      <div class="logo-icon"><img src="icon.jpg" alt="HoloChat Pro"></div>
+      HoloChat Pro
+    </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="support.html">Support</a>
+      <a href="https://apps.apple.com/us/app/holochat-pro/id6782085754" class="nav-cta">App Store</a>
+    </div>
   </div>
 </nav>
 

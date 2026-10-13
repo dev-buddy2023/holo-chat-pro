@@ -48,17 +48,23 @@
     .container { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
     nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 20px 0; border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(6, 8, 12, 0.72);
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      border-bottom: 1px solid var(--border);
     }
-    .logo { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-    .logo-icon { width: 28px; height: 28px; border-radius: 6px; overflow: hidden; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; flex-wrap: wrap; gap: 12px; }
+    .logo { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; display: flex; align-items: center; gap: 9px; }
+    .logo-icon { width: 26px; height: 26px; border-radius: 7px; overflow: hidden; box-shadow: 0 0 0 1px var(--border); }
     .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
-    .nav-links { display: flex; gap: 20px; align-items: center; }
-    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
+    .nav-links { display: flex; gap: 22px; align-items: center; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 13.5px; transition: color 0.2s, border-color 0.2s; }
     .nav-links a:hover { color: var(--text); }
-    .lang-switch { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 8px; font-size: 13px; cursor: pointer; }
-    .lang-switch:hover { background: var(--surface); }
+    .nav-cta { color: var(--text); background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 7px 14px; }
+    .nav-cta:hover { border-color: var(--accent); color: var(--accent); }
+    .lang-switch { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 6px 14px; border-radius: 999px; font-size: 13px; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+    .lang-switch:hover { background: var(--surface); border-color: var(--accent); }
 
     .page-title { padding: 48px 0 8px; }
     .page-title h1 { font-size: 28px; font-weight: 700; color: var(--accent); }
@@ -87,17 +93,18 @@
 
 <div class="bg-gradient"></div>
 
-<nav class="container">
-  <div class="logo">
-    <div class="logo-icon"><img src="icon.jpg" alt="HoloChat Pro"></div>
-    HoloChat Pro
-  </div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="support.html">Support</a>
-    <a href="#">Privacy</a>
-    <a href="https://apps.apple.com/us/app/holochat-pro/id6782085754">App Store</a>
-    <span class="lang-switch" onclick="toggleLang()">🌐 中文</span>
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">
+      <div class="logo-icon"><img src="icon.jpg" alt="HoloChat Pro"></div>
+      HoloChat Pro
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="https://apps.apple.com/us/app/holochat-pro/id6782085754" class="nav-cta">App Store</a>
+      <span class="lang-switch" onclick="toggleLang()">🌐 中文</span>
+    </div>
   </div>
 </nav>
 
