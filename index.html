@@ -5,8 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-touch-icon" content="icon.jpg">
   <link rel="icon" href="icon.jpg" type="image/jpeg">
-  <title>Holo Chat Pro — Universal AI Chat App with 31+ Tools</title>
-  <meta name="description" content="Holo Chat Pro connects to any OpenAI-compatible API and puts 31+ real-world tools at your fingertips. Bring your own API key, use any model, unlock true AI capabilities.">
+  <title>HoloChat Pro — Universal AI Chat App with 31+ Tools</title>
+  <meta name="description" content="HoloChat Pro connects to any OpenAI-compatible API and puts 31+ real-world tools at your fingertips. Bring your own API key, use any model, unlock true AI capabilities.">
+  <link rel="canonical" href="https://dev-buddy2023.github.io/holo-chat-pro/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dev-buddy2023.github.io/holo-chat-pro/">
+  <meta property="og:site_name" content="HoloChat Pro">
+  <meta property="og:title" content="HoloChat Pro — Universal AI Chat App with 31+ Tools">
+  <meta property="og:description" content="Privacy-first BYOK AI assistant for iOS: 31+ real-world tools, on-device models, no accounts, no telemetry. Bring your own OpenRouter key to switch between 200+ models.">
+  <meta property="og:image" content="https://dev-buddy2023.github.io/holo-chat-pro/icon.jpg">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="1000">
+  <meta property="og:image:alt" content="HoloChat Pro app icon">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HoloChat Pro — Universal AI Chat App with 31+ Tools">
+  <meta name="twitter:description" content="Privacy-first BYOK AI assistant for iOS: 31+ real-world tools, on-device models, no accounts, no telemetry.">
+  <meta name="twitter:image" content="https://dev-buddy2023.github.io/holo-chat-pro/icon.jpg">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "HoloChat Pro",
+    "alternateName": ["Holo Chat Pro", "HoloChat"],
+    "operatingSystem": "iOS 16.4 or later",
+    "applicationCategory": "ProductivityApplication",
+    "applicationSubCategory": "Utilities",
+    "url": "https://dev-buddy2023.github.io/holo-chat-pro/",
+    "image": "https://dev-buddy2023.github.io/holo-chat-pro/icon.jpg",
+    "screenshot": [
+      "https://dev-buddy2023.github.io/holo-chat-pro/screenshots/IMG_0522.jpg",
+      "https://dev-buddy2023.github.io/holo-chat-pro/screenshots/IMG_0516.jpg",
+      "https://dev-buddy2023.github.io/holo-chat-pro/screenshots/IMG_0518.jpg"
+    ],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": [
+      "31+ built-in tools: web search, code execution, file I/O, email, calendar, reminders, maps, HomeKit, music",
+      "Bring your own API key for any OpenAI-compatible provider",
+      "On-device (local) model support, offline and free",
+      "Prompt caching support for compatible models",
+      "No accounts, no cloud sync, no telemetry",
+      "Full desktop-grade WebUI over the local network"
+    ],
+    "sameAs": [
+      "https://apps.apple.com/us/app/holochat-pro/id6782085754",
+      "https://github.com/dev-buddy2023/holo-chat-pro",
+      "https://openrouter.ai/apps/url/https%3A%2F%2Fdev-buddy2023.github.io%2Fholo-chat-pro"
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg: #06080c;
@@ -261,6 +313,20 @@
     .store-badge .small { font-size: 11px; color: #999; display: block; }
     .store-badge .big { font-size: 18px; font-weight: 600; }
 
+    /* Screenshots */
+    .shot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin-top: 24px; }
+    .shot { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .shot img { width: 100%; display: block; aspect-ratio: 444 / 960; object-fit: cover; background: #000; }
+    .shot figcaption { font-size: 12px; color: var(--text-muted); padding: 10px 12px; line-height: 1.5; }
+
+    /* Review card */
+    .review-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px 26px; }
+    .review-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .review-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+    .review-card a { color: var(--accent); text-decoration: none; font-size: 14px; }
+    .review-card a:hover { text-decoration: underline; }
+    .review-alt { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-muted); }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--border);
@@ -297,11 +363,12 @@
 <nav class="container">
   <div class="logo">
     <div class="logo-icon"><img src="icon.jpg" alt="HoloChat Pro"></div>
-    Holo Chat Pro
+    HoloChat Pro
   </div>
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#tools">Tools</a>
+    <a href="#screenshots">Screenshots</a>
     <a href="#how">How It Works</a>
     <a href="#privacy">Privacy</a>
     <a href="https://apps.apple.com/us/app/holochat-pro/id6782085754">App Store</a>
@@ -337,10 +404,51 @@
   </div>
 </section>
 
+<!-- Screenshots -->
+<section class="container" id="screenshots" style="padding:40px 0;">
+  <div class="section-label">✦ Screenshots</div>
+  <h2 class="section-title" style="font-size:28px;">Inside the App</h2>
+  <p class="section-sub">Real screens, no mockups — conversation, tools, projects, and widgets.</p>
+  <div class="shot-grid">
+    <figure class="shot">
+      <img src="screenshots/IMG_0522.jpg" width="444" height="960" loading="lazy" alt="HoloChat Pro conversation with a linked project, prompt template, and reasoning block, running DeepSeek-V4-Flash">
+      <figcaption>Conversation with linked project, prompt template, and reasoning block</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="screenshots/IMG_0516.jpg" width="444" height="960" loading="lazy" alt="Attachment menu in HoloChat Pro: camera, album, files, video, document scan, project import, current location, and contact card">
+      <figcaption>Multimodal input: camera, files, document scan, location, project import</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="screenshots/IMG_0518.jpg" width="444" height="960" loading="lazy" alt="Conversation list with color-coded tags and round counts in dark mode">
+      <figcaption>Color-coded tags and round counts</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="screenshots/IMG_0519.jpg" width="444" height="960" loading="lazy" alt="Conversation list with search by title or content">
+      <figcaption>Search conversations by title or content</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="screenshots/IMG_0521.jpg" width="444" height="960" loading="lazy" alt="Long-press conversation menu: select, pin, rename, AI rename, share, and archive">
+      <figcaption>Long-press menu: select, pin, AI rename, share, archive</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="screenshots/IMG_0527.jpg" width="444" height="960" loading="lazy" alt="Projects view grouping conversations into project folders">
+      <figcaption>Project-linked conversations</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="screenshots/IMG_0515.jpg" width="444" height="960" loading="lazy" alt="Home screen widget showing recent conversations, with dynamic app icons">
+      <figcaption>Home screen widgets and dynamic app icons</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="screenshots/IMG_0528.jpg" width="444" height="960" loading="lazy" alt="Calendar view of conversations with accent color theme">
+      <figcaption>Calendar view and accent themes</figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- Features -->
 <section class="features container" id="features">
   <div class="section-label">✦ Features</div>
-  <h2 class="section-title">What Makes Holo Chat Pro Different</h2>
+  <h2 class="section-title">What Makes HoloChat Pro Different</h2>
   <p class="section-sub">Not just another AI chat app. A tool-enabled assistant that respects your privacy.</p>
 
   <div class="features-grid">
@@ -437,7 +545,7 @@
     <div class="feature-card">
       <div class="feature-icon" style="background:rgba(247,120,186,0.12);">🦊</div>
       <h3>Mac → iPhone Webpage</h3>
-      <p>From your Mac, send any webpage to Holo Chat Pro with one click and get an instant AI summary on your phone. Perfect for reading long articles on the go.</p>
+      <p>From your Mac, send any webpage to HoloChat Pro with one click and get an instant AI summary on your phone. Perfect for reading long articles on the go.</p>
       <a href="HoloChatProSafariPlugin.dmg" download style="display:inline-block; margin-top:10px; font-size:13px; color:var(--accent); text-decoration:none;">⬇️ Download the Mac Safari Extension</a>
     </div>
 
@@ -453,15 +561,19 @@
 <section class="container" style="padding:40px 0;">
   <div class="privacy-banner" style="max-width:100%;">
     <div class="section-label">✦ What's New</div>
-    <h3 style="font-size:22px; margin-bottom:16px;">v1.1.2 Release Notes</h3>
+    <h3 style="font-size:22px; margin-bottom:16px;">v1.1.5 Release Notes <span style="font-weight:400; color:var(--text-muted); font-size:14px;">· Oct 11, 2026</span></h3>
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:20px; text-align:left; margin-top:20px;">
       <div>
         <p style="font-weight:600; color:var(--text); margin-bottom:6px;">New Features</p>
-        <p style="font-size:13px; color:var(--text-muted); line-height:1.6;">Pattern backgrounds for project views, customizable settings panel patterns, and toggleable background patterns — pick the look that fits your style. New permission service and hub view for managing app permissions. Improved OCR with the Paddle OCR engine for faster, more accurate on-device document scanning.</p>
+        <p style="font-size:13px; color:var(--text-muted); line-height:1.6;">AI image, music, and video generation right inside conversations — batch image generation with multi-image preview and 2x/4x upscaling with a draggable side-by-side comparison divider. New audio asset gallery, image screensaver, HomeKit smart home control, map waypoints, tag-based media browsing with pinned tags, and search results that jump straight to the matching text.</p>
       </div>
       <div>
         <p style="font-weight:600; color:var(--text); margin-bottom:6px;">Improvements</p>
-        <p style="font-size:13px; color:var(--text-muted); line-height:1.6;">Standardized typography across all list views, uniform spacing in vertical layouts, and a redesigned menu-style pattern selector. Faster rendering and smoother scrolling, optimized persistence calls for quicker save and load, and improved thumbnail preview handling.</p>
+        <p style="font-size:13px; color:var(--text-muted); line-height:1.6;">Faster gallery loading and scrolling, faster app launch, device sync with project file upload, privacy mode with password unlock, better keyboard clearance and dark-mode display in the input bar, and reading-position restoration for long conversations.</p>
+      </div>
+      <div>
+        <p style="font-weight:600; color:var(--text); margin-bottom:6px;">Fixes</p>
+        <p style="font-size:13px; color:var(--text-muted); line-height:1.6;">Multi-image preview, fullscreen preview, audio seek and replay, video and picture-in-picture handoff, gallery crash and stale badge count, HomeKit outlet switching, privacy wall switching, URL scheme and widget file handling, and multi-modal content decoding.</p>
       </div>
     </div>
   </div>
@@ -472,9 +584,42 @@
   <div class="privacy-banner" style="max-width:100%;">
     <div class="section-label">✦ Version History</div>
     <h3 style="font-size:22px; margin-bottom:8px;">All Releases</h3>
-    <p style="font-size:14px; color:var(--text-muted); margin-bottom:24px;">Everything we've shipped — from the first release to v1.1.2.</p>
+    <p style="font-size:14px; color:var(--text-muted); margin-bottom:24px;">Everything we've shipped — from the first release to v1.1.5.</p>
 
     <div style="display:grid; gap:14px; text-align:left;">
+
+      <!-- v1.1.4 was never released — history goes v1.1.5 → v1.1.3 → v1.1.2 -->
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 20px;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+          <span style="font-weight:700; color:var(--text);">v1.1.5</span>
+          <span style="font-size:12px; color:var(--text-muted);">Oct 11, 2026</span>
+        </div>
+        <div style="font-size:13px; color:var(--text-muted); line-height:1.65;">
+          <p style="font-weight:600; color:var(--text); margin-bottom:4px;">New Features</p>
+          <p style="margin:0 0 10px 0;">AI image, music, and video generation inside conversations, with batch generation, multi-image preview, 2x and 4x upscaling and a draggable side-by-side comparison divider. Audio asset gallery, image screensaver, HomeKit accessory control, map waypoints saved from the location button, tag-based media browsing with pinned tags, and search results that jump to the matching text.</p>
+          <p style="font-weight:600; color:var(--text); margin-bottom:4px;">Improvements</p>
+          <p style="margin:0 0 10px 0;">Faster gallery loading and scrolling, faster app launch, device sync with project file upload, privacy mode with password unlock, better keyboard clearance and dark-mode display in the input bar, smoother fork navigation, and reading-position restoration for long conversations.</p>
+          <p style="font-weight:600; color:var(--text); margin-bottom:4px;">Fixes</p>
+          <p style="margin:0;">Multi-image preview page, fullscreen image preview, audio replay and seek, video background audio and picture-in-picture handoff, gallery crash and stale badge count, HomeKit outlet switching, privacy wall switching, URL scheme and widget file handling, and multi-modal content decoding.</p>
+        </div>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 20px;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+          <span style="font-weight:700; color:var(--text);">v1.1.3</span>
+          <span style="font-size:12px; color:var(--text-muted);">Oct 7, 2026</span>
+        </div>
+        <div style="font-size:13px; color:var(--text-muted); line-height:1.65;">
+          <p style="font-weight:600; color:var(--text); margin-bottom:4px;">New Features</p>
+          <p style="margin:0 0 10px 0;">Live Activity — real-time streaming state on the Dynamic Island, so an ongoing response is visible at a glance. Apple Pencil drawing canvas inside conversations, AI travel advice based on destination and weather, a full conversation trace view, automatic chat drafts, drag-to-reorder quick-switch profile slots, and OCR box extraction for individual text boxes from scanned documents.</p>
+          <p style="font-weight:600; color:var(--text); margin-bottom:4px;">Enhanced Analytics</p>
+          <p style="margin:0 0 10px 0;">Daily token usage timeline, cache hit rate trend, and token counts that reflect cache hits and misses accurately.</p>
+          <p style="font-weight:600; color:var(--text); margin-bottom:4px;">Improved Experience</p>
+          <p style="margin:0 0 10px 0;">Sync progress bar with clear visual feedback, faster global map loading with smarter caching and fresher GPS data, a new app background pattern, and open source license information in-app.</p>
+          <p style="font-weight:600; color:var(--text); margin-bottom:4px;">Fixes</p>
+          <p style="margin:0;">Parallel chat sessions interfering with each other, quick-switch profile selection persisting across restarts, iPad token stats sheet sizing, consistent spacing across settings sections, and the trash long-press gesture to empty all items.</p>
+        </div>
+      </div>
 
       <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 20px;">
         <div style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
@@ -706,7 +851,7 @@
   <div class="privacy-banner" style="max-width:820px;">
     <div class="section-label">✦ Mac Safari Extension</div>
     <h3 style="font-size:22px; margin-bottom:8px;">Send Webpages From Your Mac</h3>
-    <p style="font-size:14px; color:var(--text-muted); margin-bottom:24px;">Install the Holo Chat Pro Safari extension on your Mac, then send any webpage straight to your iPhone with one click and get an instant AI summary — perfect for long articles on the go.</p>
+    <p style="font-size:14px; color:var(--text-muted); margin-bottom:24px;">Install the HoloChat Pro Safari extension on your Mac, then send any webpage straight to your iPhone with one click and get an instant AI summary — perfect for long articles on the go.</p>
     <a href="HoloChatProSafariPlugin.dmg" class="btn-secondary" download>
       <span>⬇️</span>
       Download HoloChatProSafariPlugin.dmg
@@ -715,7 +860,7 @@
       <p style="font-weight:600; color:var(--text); margin-bottom:6px;">Install Guide</p>
       1. Download the .dmg and open it.<br>
       2. Drag <strong>SafariApp.app</strong> into your Applications folder.<br>
-      3. Open Safari → Settings → Extensions → enable <strong>Holo Chat Pro</strong>.<br>
+      3. Open Safari → Settings → Extensions → enable <strong>HoloChat Pro</strong>.<br>
       4. Requires macOS 14 (Sonoma) or later.
     </div>
   </div>
@@ -724,13 +869,13 @@
 <!-- Privacy -->
 <section class="privacy-banner container" id="privacy">
   <h3>🔒 Privacy-First by Design</h3>
-  <p>No accounts, no cloud sync, no tracking. All data stays on your device. You bring your own API key and connect directly to your chosen provider. Holo Chat Pro never sees your conversations unless you choose to share them.</p>
+  <p>No accounts, no cloud sync, no tracking. All data stays on your device. You bring your own API key and connect directly to your chosen provider. HoloChat Pro never sees your conversations unless you choose to share them.</p>
 </section>
 
 <!-- CTA -->
 <section class="cta container">
   <h2>Ready to Unlock Your AI's Full Potential?</h2>
-  <p>Download Holo Chat Pro and experience AI that can actually do things.</p>
+  <p>Download HoloChat Pro and experience AI that can actually do things.</p>
   <a href="https://apps.apple.com/us/app/holochat-pro/id6782085754" class="store-badge">
     <span style="font-size:28px;">🍎</span>
     <span>
@@ -741,15 +886,26 @@
   <p style="margin-top:20px; font-size:13px; color:var(--text-muted);">Free to download · No subscriptions · Pay only for the models you use</p>
 </section>
 
+<!-- Reviews -->
+<section class="container" style="padding:0 0 60px;">
+  <div class="review-card">
+    <h3>💬 If HoloChat Pro Works for You</h3>
+    <p>It's free, bring-your-own-key, no accounts and no subscription. If it saves you time, an honest review on the App Store helps other people find it.</p>
+    <p style="margin-top:12px;"><a href="https://apps.apple.com/us/app/holochat-pro/id6782085754?action=write-review">Leave an honest review →</a></p>
+    <p class="review-alt" lang="zh-CN">如果它帮到了你，一条真实评价能让更多人发现它。<a href="https://apps.apple.com/us/app/holochat-pro/id6782085754?action=write-review">去 App Store 写评价</a></p>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="container">
   <div>
     <a href="https://github.com/dev-buddy2023/holo-chat-pro">GitHub</a>
     <a href="support.html">Support</a>
+    <a href="openrouter.html">OpenRouter</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="mailto:dev_buddy2023@163.com">Contact</a>
   </div>
-  <p>© 2026 Holo Chat Pro. All rights reserved.</p>
+  <p>© 2026 HoloChat Pro. All rights reserved.</p>
 </footer>
 
 <script>
