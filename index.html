@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="apple-touch-icon" content="icon.jpg">
+  <link rel="apple-touch-icon" href="icon.jpg">
   <link rel="icon" href="icon.jpg" type="image/jpeg">
+  <meta name="theme-color" content="#06080c">
   <title>HoloChat Pro — Universal AI Chat App with 31+ Tools</title>
   <meta name="description" content="HoloChat Pro connects to any OpenAI-compatible API and puts 31+ real-world tools at your fingertips. Bring your own API key, use any model, unlock true AI capabilities.">
   <link rel="canonical" href="https://dev-buddy2023.github.io/holo-chat-pro/">
@@ -13,6 +14,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dev-buddy2023.github.io/holo-chat-pro/">
   <meta property="og:site_name" content="HoloChat Pro">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="HoloChat Pro — Universal AI Chat App with 31+ Tools">
   <meta property="og:description" content="Privacy-first BYOK AI assistant for iOS: 31+ real-world tools, on-device models, no accounts, no telemetry. Bring your own OpenRouter key to switch between 200+ models.">
   <meta property="og:image" content="https://dev-buddy2023.github.io/holo-chat-pro/icon.jpg">
@@ -344,7 +346,8 @@
       .tools-grid { grid-template-columns: repeat(3, 1fr); }
       .steps { flex-direction: column; align-items: center; }
       .step { max-width: 100%; }
-      .nav-links a:nth-child(n+3) { display: none; }
+      .nav-links { flex-wrap: wrap; gap: 14px; }
+      .nav-links a.m-hide { display: none; }
     }
     @media (max-width: 480px) {
       .hero { padding: 50px 0 30px; }
@@ -369,11 +372,12 @@
     <a href="#features">Features</a>
     <a href="#tools">Tools</a>
     <a href="#screenshots">Screenshots</a>
-    <a href="#how">How It Works</a>
-    <a href="#privacy">Privacy</a>
+    <a href="#how" class="m-hide">How It Works</a>
+    <a href="#privacy" class="m-hide">Privacy</a>
     <a href="https://apps.apple.com/us/app/holochat-pro/id6782085754">App Store</a>
-    <a href="https://github.com/dev-buddy2023/holo-chat-pro">GitHub</a>
-    <a href="mailto:dev_buddy2023@163.com">Contact</a>
+    <a href="support.html" class="m-hide">Support</a>
+    <a href="https://github.com/dev-buddy2023/holo-chat-pro" class="m-hide">GitHub</a>
+    <a href="mailto:dev_buddy2023@163.com" class="m-hide">Contact</a>
   </div>
 </nav>
 
@@ -411,7 +415,7 @@
   <p class="section-sub">Real screens, no mockups — conversation, tools, projects, and widgets.</p>
   <div class="shot-grid">
     <figure class="shot">
-      <img src="screenshots/IMG_0522.jpg" width="444" height="960" loading="lazy" alt="HoloChat Pro conversation with a linked project, prompt template, and reasoning block, running DeepSeek-V4-Flash">
+      <img src="screenshots/IMG_0522.jpg" width="444" height="960" loading="eager" fetchpriority="high" alt="HoloChat Pro conversation with a linked project, prompt template, and reasoning block, running DeepSeek-V4-Flash">
       <figcaption>Conversation with linked project, prompt template, and reasoning block</figcaption>
     </figure>
     <figure class="shot">
@@ -809,8 +813,14 @@
     <div class="tool-item">🎵 Music Control</div>
     <div class="tool-item">📄 Generate PDF</div>
     <div class="tool-item">🖼️ Image Gen</div>
+    <div class="tool-item">🎼 Music Gen</div>
+    <div class="tool-item">🎬 Video Gen</div>
     <div class="tool-item">🔊 Text to Speech</div>
     <div class="tool-item">🎤 Voice Memo</div>
+    <div class="tool-item">📝 Document Scan (OCR)</div>
+    <div class="tool-item">✏️ Drawing Canvas</div>
+    <div class="tool-item">📌 Map Waypoints</div>
+    <div class="tool-item">🧩 Custom Skills</div>
     <div class="tool-item">📋 Clipboard</div>
     <div class="tool-item">🔗 Share Sheet</div>
     <div class="tool-item">🧹 Recycle Bin</div>
@@ -820,6 +830,7 @@
     <div class="tool-item">🏥 Health Data</div>
     <div class="tool-item">🏠 Smart Home</div>
   </div>
+  <p class="section-sub" style="margin-top:18px; font-size:13px;">31 shown here — the full set is in the app.</p>
 </section>
 
 <!-- How it Works -->
@@ -843,6 +854,21 @@
       <h3>Start Chatting</h3>
       <p>Talk to your AI. Use 31+ tools. It remembers past conversations and can act on your behalf. No limits.</p>
     </div>
+  </div>
+</section>
+
+<!-- System Requirements -->
+<section class="container" style="padding:40px 0;">
+  <div class="privacy-banner" style="max-width:100%;">
+    <div class="section-label">✦ System Requirements</div>
+    <h3 style="font-size:22px; margin-bottom:14px;">Before You Download</h3>
+    <ul style="margin:0 0 0 20px; font-size:14px; color:var(--text-muted); line-height:1.8;">
+      <li><strong style="color:var(--text);">iOS 16.4 or later</strong> — universal app for iPhone and iPad</li>
+      <li>~64 MB download · Free · No subscription · Pay only for the models you use</li>
+      <li>20+ languages, light/dark/system themes, 10 accent colors</li>
+      <li>Cloud models need your own API key; on-device models run offline with no key at all</li>
+      <li>Sensitive permissions (Health, HomeKit, Location, Contacts, Microphone) are gated per tool and processed on your device</li>
+    </ul>
   </div>
 </section>
 
